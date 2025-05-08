@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="stylesheet" href="/english_t/Modules/AoraPageBuilder/Resources/assets/css/main.css">
+    <link rel="stylesheet" href="{{ asset('/Modules/AoraPageBuilder/Resources/assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('/Modules/AoraPageBuilder/Resources/assets/css/responsive.css') }}">
 </head>
 
 <body>
@@ -326,11 +327,11 @@
                                                     <img src="public/images/fanpage.svg" alt="">
                                                 </div>
                                                 <div class="community-text">
-                                                    <p>GROUP  Tiếng Anh cô Vũ Thị Mai Phương</p>
+                                                    <p>GROUP Tiếng Anh cô Vũ Thị Mai Phương</p>
                                                     <div class="more">
                                                         <span>
-                                                        <img src="public/images/public.svg" alt="">    
-                                                        Nhóm công khai</span>
+                                                            <img src="public/images/public.svg" alt="">
+                                                            Nhóm công khai</span>
                                                         <p class="follow">434K Thành viên</p>
                                                     </div>
                                                 </div>
@@ -429,13 +430,312 @@
             </div>
         </nav>
         <div class="home-main-content">
-            <header></header>
+            <header class="primary-header">
+                <div class="navigation-bar cs-container">
+                    <nav class="navbar">
+                        <div class="search-box d-none d-lg-block">
+                            <form action="" class="search">
+                                <button class="btn-search">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                                    </svg>
+                                </button>
+                                <input placeholder="Tìm kiếm..." type="text">
+                            </form>
+                        </div>
+                        <div class="nav-left d-flex d-lg-none align-items-center">
+                            <div class="ic-hamburger">
+                                <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon">
+                                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                                </svg>
+                            </div>
+                            <div class="nav-logo">
+                                <a href="/">
+                                    <img src="public/images/logo.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="categories">
+                            <a class="current" href="/">
+                                <span><img src="public/images/ic-home.svg" alt=""></span>
+                                Trang chủ
+                            </a>
+                            <a href="/">
+                                <span><img src="public/images/ic-news.svg" alt=""></span>
+                                Blog
+                            </a>
+                        </div>
+                        <div class="action">
+                            <div class="ic-action">
+                                <img src="public/images/ic-action.svg" alt="">
+                            </div>
+                            <a class="btn btn-login" href="/">
+                                Đăng nhập
+                            </a>
+                            <a class="btn btn-register" href="/">
+                                Đăng ký
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <div class="content-panel cs-container">
+                <section class="banner">
+                    <div class="row">
+                        <div class="col-12 col-lg-7 col-md-6">
+                            <div class="banner-content">
+                                <h2 class="banner-title">Kiểm tra trình độ và nhận tư vấn lộ trình học tiếng anh cho người đi làm</h2>
+                                <div class="banner-desc">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <a href="/" class="btn btn-cta">Kiểm tra trình độ ngay</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 col-md-6">
+                            <div class="banner-image">
+                                <img src="public/images/teacher.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="study-program">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">Chương trình học</h2>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="inner">
+                                <h3 class="study-program__title">Tiếng anh cho trẻ</h3>
+                                <div class="study-program__desc">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <a href="/" class="btn-register-now">Đăng ký ngay</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="inner primary">
+                                <h3 class="study-program__title">Tiếng anh trung cấp</h3>
+                                <div class="study-program__desc">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <a href="/" class="btn-register-now">Đăng ký ngay</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="inner">
+                                <h3 class="study-program__title">IELTS</h3>
+                                <div class="study-program__desc">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <a href="/" class="btn-register-now">Đăng ký ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="reason">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">Lý do chọn Ms.Linh</h2>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="inner box-image">
+                                <img src="public/images/thinking.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="inner">
+                                <div class="box-content">
+                                    <div class="box-content__image">
+                                        <img src="public/images/ic-user.svg" alt="">
+                                    </div>
+                                    <div class="box-content__desc">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-content__image">
+                                        <img src="public/images/ic-user.svg" alt="">
+                                    </div>
+                                    <div class="box-content__desc">
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-content__image">
+                                        <img src="public/images/ic-user.svg" alt="">
+                                    </div>
+                                    <div class="box-content__desc">
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-content__image">
+                                        <img src="public/images/ic-user.svg" alt="">
+                                    </div>
+                                    <div class="box-content__desc">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestiae laborum maxime iusto deleniti neque in sed, ipsa vitae ea.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="blog">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="section-title">Lịch thi chuyên anh</h2>
+                        </div>
+                    </div>
+                    <div class="list-posts">
+                        <div class="item-post">
+                            <div class="inner">
+                                <div class="item-post__image">
+                                    <a href="/">
+                                        <img src="public/images/teacher.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="item-post__content">
+                                    <h4 class="post-title">
+                                        <a href="/">Chúc mừng con Chu Gia Hân, học sinh lớp Luyên thi chuyên anh 7A0 của cô Đỗ Dung,
+                                            đã đạt giải nhì Tiếng anh trường THCS Giảng Võ năm 2025!
+                                        </a>
+                                    </h4>
+                                    <div class="post-exceprt">
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique suscipit voluptate explicabo fugit officia. Rem corporis mollitia reiciendis repellendus delectus temporibus tempore, eveniet sequi totam quos maiores officiis numquam porro.</p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <div class="post-info">
+                                            <p>Ngày viết: 19/03/2025</p>
+                                            <p>Người viết: Cô Đỗ Dung</p>
+                                        </div>
+                                        <div class="post-link">
+                                            <a class="btn btn-secondary mt-0" href="/">Xem thêm</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-post">
+                            <div class="inner">
+                                <div class="item-post__image">
+                                    <a href="/">
+                                        <img src="public/images/teacher.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="item-post__content">
+                                    <h4 class="post-title">
+                                        <a href="/">Chúc mừng con Chu Gia Hân, học sinh lớp Luyên thi chuyên anh 7A0 của cô Đỗ Dung,
+                                            đã đạt giải nhì Tiếng anh trường THCS Giảng Võ năm 2025!
+                                        </a>
+                                    </h4>
+                                    <div class="post-exceprt">
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique suscipit voluptate explicabo fugit officia. Rem corporis mollitia reiciendis repellendus delectus temporibus tempore, eveniet sequi totam quos maiores officiis numquam porro.</p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <div class="post-info">
+                                            <p>Ngày viết: 19/03/2025</p>
+                                            <p>Người viết: Cô Đỗ Dung</p>
+                                        </div>
+                                        <div class="post-link">
+                                            <a class="btn btn-secondary mt-0" href="/">Xem thêm</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-post">
+                            <div class="inner">
+                                <div class="item-post__image">
+                                    <a href="/">
+                                        <img src="public/images/teacher.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="item-post__content">
+                                    <h4 class="post-title">
+                                        <a href="/">Chúc mừng con Chu Gia Hân, học sinh lớp Luyên thi chuyên anh 7A0 của cô Đỗ Dung,
+                                            đã đạt giải nhì Tiếng anh trường THCS Giảng Võ năm 2025!
+                                        </a>
+                                    </h4>
+                                    <div class="post-exceprt">
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique suscipit voluptate explicabo fugit officia. Rem corporis mollitia reiciendis repellendus delectus temporibus tempore, eveniet sequi totam quos maiores officiis numquam porro.</p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <div class="post-info">
+                                            <p>Ngày viết: 19/03/2025</p>
+                                            <p>Người viết: Cô Đỗ Dung</p>
+                                        </div>
+                                        <div class="post-link">
+                                            <a class="btn btn-secondary mt-0" href="/">Xem thêm</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="modal modal-login" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đăng nhập</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="auth-form">
+                        <form>
+                            <div class="auth-form-item">
+                                <div class="input-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" x="0" y="0" viewBox="0 0 460.8 460.8" xml:space="preserve">
+                                        <g>
+                                            <path d="M230.432 239.282c65.829 0 119.641-53.812 119.641-119.641C350.073 53.812 296.261 0 230.432 0s-119.64 53.812-119.64 119.641 53.812 119.641 119.64 119.641zM435.755 334.89c-3.135-7.837-7.314-15.151-12.016-21.943-24.033-35.527-61.126-59.037-102.922-64.784-5.224-.522-10.971.522-15.151 3.657-21.943 16.196-48.065 24.555-75.233 24.555s-53.29-8.359-75.233-24.555c-4.18-3.135-9.927-4.702-15.151-3.657-41.796 5.747-79.412 29.257-102.922 64.784-4.702 6.792-8.882 14.629-12.016 21.943-1.567 3.135-1.045 6.792.522 9.927 4.18 7.314 9.404 14.629 14.106 20.898 7.314 9.927 15.151 18.808 24.033 27.167 7.314 7.314 15.673 14.106 24.033 20.898 41.273 30.825 90.906 47.02 142.106 47.02s100.833-16.196 142.106-47.02c8.359-6.269 16.718-13.584 24.033-20.898 8.359-8.359 16.718-17.241 24.033-27.167 5.224-6.792 9.927-13.584 14.106-20.898 2.611-3.135 3.133-6.793 1.566-9.927z" fill="var(--extend-secondary-color, #000000)" opacity="1" data-original="#000000"></path>
+                                        </g>
+                                    </svg>
+                                    <input autocomplete="username" placeholder="Tài khoản đăng nhập" type="text" value="">
+                                </div>
+                            </div>
+                            <div class="auth-form-item">
+                                <div class="input-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" x="0" y="0" viewBox="0 0 35 35" xml:space="preserve">
+                                        <g>
+                                            <path d="M17.5 1.498c-4.412 0-8 3.59-8 8v5.004h-1c-1.93 0-3.5 1.57-3.5 3.5v12c0 1.93 1.57 3.5 3.5 3.5h18c1.93 0 3.5-1.57 3.5-3.5v-12c0-1.93-1.57-3.5-3.5-3.5h-1V9.498c0-4.41-3.59-8-8-8zm-5 8c0-2.756 2.243-5 5-5s5 2.244 5 5v5.004h-10zM12 25.512c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm5.5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm5.5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" fill="var(--extend-secondary-color, #000000)" opacity="1" data-original="#000000"></path>
+                                        </g>
+                                    </svg>
+                                    <input autocomplete="new-password" name="password" placeholder="Mật khẩu" type="password" value="">
+                                </div>
+                            </div>
+                            <div class="forgot-password">
+                                <span class="forgot-password-item">Quên mật khẩu</span>
+                            </div>
+                            <div>
+                                <button class="form-btn-login" tabindex="0" type="submit">Đăng nhập</button>
+                                <div style="display: flex;">Không có tài khoản?&nbsp;
+                                    <span class="dialog-link">Đăng ký ngay </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
-<script src="/english_t/Modules/AoraPageBuilder/Resources/assets/js/main.js"></script>
+<script src="{{ asset('/Modules/AoraPageBuilder/Resources/assets/js/main.js') }}"></script>
 
 </html>
