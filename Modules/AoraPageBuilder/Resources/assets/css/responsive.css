@@ -17,6 +17,7 @@
         padding-left: 18px;
         padding-right: 18px;
     }
+    
 }
 
 @media(max-width: 1199px) {
@@ -168,5 +169,18 @@
 
     header .action .btn {
         display: none;
+    }
+
+    .banner .banner-content {
+        padding: 16px;
+    }
+
+    .banner .banner-content h2 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .banner .banner-desc p {
+        margin-bottom: 0;
     }
 }

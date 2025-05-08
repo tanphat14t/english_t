@@ -909,8 +909,7 @@ header .action>a+a {
 
 .blog .item-post__image img {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -1011,4 +1010,138 @@ header .action>a+a {
 
 .ic-action {
     display: none;
+}
+
+.modal-action .btn-close {
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    background-color: #fff;
+    min-width: unset;
+    border-radius: 1000px;
+    transition: all 0.3s;
+    padding: 6px !important;
+}
+
+.modal-action .btn-close:hover {
+    transform: rotate(90deg);
+}
+
+.modal-action .modal-body::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-action .modal-content {
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #f9f5fa;
+}
+
+.modal-action .modal-body {
+    padding: 10px 0;
+}
+
+.modal-action .modal-header {
+    padding: 16px 24px;
+    border: 0;
+    justify-content: center;
+}
+
+.modal-action .modal-header h5 {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #000;
+}
+
+.dialog-sub-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin: unset;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.auth-form .auth-form-item {
+    display: flex;
+    align-items: center;
+}
+
+.auth-form .auth-form-item .input-item {
+    background: #fbfbfb;
+    border: 1px solid #f1f3f5;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    line-height: 1.4375em;
+    color: rgba(0, 0, 0, 0.87);
+    box-sizing: border-box;
+    position: relative;
+    cursor: text;
+    display: inline-flex;
+    align-items: center;
+}
+
+.auth-form .auth-form-item .input-item input {
+    font: inherit;
+    letter-spacing: inherit;
+    padding: 4px 0px 5px;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    outline: none !important;
+    animation-duration: 10ms;
+}
+
+.auth-form .auth-form-item .input-item svg {
+    margin-right: 4px;
+}
+
+.auth-form .auth-form-item .input-item path {
+    fill: #ec407a;
+}
+
+.auth-form .forgot-password {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.auth-form .forgot-password-item {
+    cursor: pointer;
+    color: #337ab7;
+}
+
+.dialog-button {
+    border: none;
+    background-color: #f40c44;
+    height: 48px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: .5s !important;
+    min-width: 227px;
+    margin: 0 auto 20px;
+}
+
+.dialog-button:hover {
+    transform: translateY(-4px);
+}
+
+.dialog-link {
+    cursor: pointer;
+    color: #337ab7;
 }

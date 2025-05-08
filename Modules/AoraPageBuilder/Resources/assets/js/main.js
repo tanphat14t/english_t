@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   collapsedHotline();
   openMenu();
   openPopupLogin();
-  console.log("running....");
 });
 function collapsedHotline() {
   const expandableItems = document.querySelectorAll(".social-item.has-expand");
@@ -40,11 +39,21 @@ function openMenu() {
 function openPopupLogin() {
   const icAction = document.querySelector(".ic-action");
   const modalLoginEl = document.querySelector(".modal-login");
-
-  if (icAction && modalLoginEl) {
-    const modal = new bootstrap.Modal(modalLoginEl);
-    icAction.addEventListener("click", function () {
-      modal.show();
-    });
-  }
+  const modalRegisterEl = document.querySelector(".modal-register");
+  const btnLogin = document.querySelector("header .btn-login");
+  const btnRegister = document.querySelector("header .btn-register");
+  const modal = new bootstrap.Modal(modalLoginEl);
+  const modalRegister = new bootstrap.Modal(modalRegisterEl);
+  icAction.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.show();
+  });
+  btnLogin.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.show();
+  });
+  btnRegister.addEventListener("click", function (e) {
+    e.preventDefault();
+    modalRegister.show();
+  });
 }
