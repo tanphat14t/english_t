@@ -245,7 +245,7 @@
                                 <a href="/" target="_blank">Theo dõi</a>
                             </div>
                         </div>
-                        <div class="about-bottom">
+                        <div class="about-bottom flex-nowrap">
                             <div class="english">
                                 <img src="public/images/ielts.svg" alt="">
                                 <span>8.0</span>
@@ -254,6 +254,8 @@
                                 <img src="public/images/toeic.svg" alt="">
                                 <span>990/990</span>
                             </div>
+                        </div>
+                        <div class="about-bottom mt-0">
                             <div class="english w-100">
                                 <span class="text-blue">TOEIC WRITING</span>
                                 <span>200/200</span>
@@ -476,6 +478,50 @@
                                 Đăng ký
                             </a>
                         </div>
+
+                        <div class="action is-loged-in d-none">
+                            <div class="action-button">
+                                <img src="public/images/default-avatar.webp" alt="">
+                            </div>
+                            <div class="user-menu">
+                                <div class="user-info">
+                                    <div class="user-avatar">
+                                        <img src="public/images/default-avatar.webp" alt="">
+                                    </div>
+                                    <div class="user-details">
+                                        <p class="user-name">Nguyễn Linh</p>
+                                        <p class="user-email">nguyenhphp@gmail.com</p>
+                                    </div>
+                                </div>
+                                <a href="/">
+                                    <div class="user-menu-item">
+                                        <img src="public/images/user.svg" alt="">
+                                        Trang cá nhân
+                                    </div>
+                                </a>
+                                <a href="/">
+                                    <div class="user-menu-item">
+                                        <img src="public/images/my-course1.svg" alt="">
+                                        Khóa học của tôi
+                                    </div>
+                                </a>
+                                <a href="/">
+                                    <div class="user-menu-item">
+                                        <img src="public/images/cart-menu.svg" alt="">Lịch sử đơn hàng
+                                    </div>
+                                </a>
+                                <a href="/">
+                                    <div class="user-menu-item">
+                                        <img src="public/images/reserve.svg" alt="">Bảo lưu
+                                    </div>
+                                </a>
+                                <a href="/">
+                                    <div class="user-menu-item">
+                                        <img src="public/images/sign-out.svg" alt="">Đăng xuất
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </header>
@@ -505,7 +551,7 @@
                         <div class="col-12">
                             <h2 class="section-title">Chương trình học</h2>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 study-item">
                             <div class="inner">
                                 <h3 class="study-program__title">Tiếng anh cho trẻ</h3>
                                 <div class="study-program__desc">
@@ -518,7 +564,7 @@
                                 <a href="/" class="btn-register-now">Đăng ký ngay</a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 study-item">
                             <div class="inner primary">
                                 <h3 class="study-program__title">Tiếng anh trung cấp</h3>
                                 <div class="study-program__desc">
@@ -529,7 +575,7 @@
                                 <a href="/" class="btn-register-now">Đăng ký ngay</a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 study-item">
                             <div class="inner">
                                 <h3 class="study-program__title">IELTS</h3>
                                 <div class="study-program__desc">

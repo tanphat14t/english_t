@@ -29,10 +29,26 @@ function openMenu() {
   hambugerMenu.addEventListener("click", function () {
     sidebar.classList.toggle("is-open");
     overlay.classList.toggle("is-open");
+    document.querySelector("body").classList.add("overflow-hidden");
   });
   overlay.addEventListener("click", function () {
     sidebar.classList.remove("is-open");
     overlay.classList.remove("is-open");
+    document.querySelector("body").classList.remove("overflow-hidden");
+  });
+  // open menu-user
+  const userIcon = document.querySelector(".action-button");
+  const menuUser = document.querySelector(".user-menu");
+  userIcon.addEventListener("click", function () {
+    menuUser.classList.toggle("is-open");
+  });
+  document.addEventListener("click", function (event) {
+    const isClickInsideMenu = menuUser.contains(event.target);
+    const isClickOnIcon = userIcon.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnIcon) {
+      menuUser.classList.remove("is-open");
+    }
   });
 }
 
