@@ -79,6 +79,28 @@ class PageBuilderController extends Controller
         }
 
     }
+    public function examOnline()
+    {
+        try {
+            // $data['row'] = $this->pageBuilderRepo->find($id);
+            return view('aorapagebuilder::pages.exam-online');
+        } catch (Exception $e) {
+            Toastr::error($e->getMessage(), 'Error!!');
+            return response()->json(['error' => $e->getMessage()], 503);
+        }
+
+    }
+    public function doExamOnline()
+    {
+        try {
+            // $data['row'] = $this->pageBuilderRepo->find($id);
+            return view('aorapagebuilder::pages.do-exam');
+        } catch (Exception $e) {
+            Toastr::error($e->getMessage(), 'Error!!');
+            return response()->json(['error' => $e->getMessage()], 503);
+        }
+
+    }
 
     public function edit($id)
     {

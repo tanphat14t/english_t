@@ -13,4 +13,7 @@ Route::prefix('page-builder/')->as('page_builder.')->middleware(['auth'])->group
 
 
     Route::post('new-upload', 'ImageUploadController@upload')->name('pageBuilderImageUpload');
+    Route::get('exam-online', 'PageBuilderController@examOnline')->name('pages.examOnline');
+    Route::get('do-exam', 'PageBuilderController@doExamOnline')->name('pages.doExamOnline');
+
 });
