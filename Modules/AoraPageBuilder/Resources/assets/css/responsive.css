@@ -149,6 +149,10 @@
     header .action .btn {
         font-size: 12px;
     }
+
+    .study-layout-item {
+        margin-bottom: 80px;
+    }
 }
 
 
@@ -203,8 +207,13 @@
         grid-template-columns: repeat(2, auto);
     }
 
+    .result-grid.flashcard .result-item:first-child,
     .result-grid .result-item:first-child {
         grid-column: 1 / span 4;
+    }
+
+    .result-grid.flashcard .result-item:first-child {
+        grid-row: 1 / span 2;
     }
 
     .result-grid .result-item:nth-child(2) {
@@ -227,9 +236,75 @@
         grid-column: 3 / span 2;
     }
 
+    .result-grid.flashcard .result-item:nth-child(6) {
+        grid-row: 5;
+        grid-column: 1 / span 4;
+    }
+
     .lecture-information-button button {
         min-width: 50%;
     }
+
+    .content-act-list {
+        grid-template-columns: 1fr;
+    }
+
+    .mui-container .col-lg-9 {
+        padding-left: 0;
+        padding-top: 10px;
+    }
+
+    .button-showmore {
+        justify-content: center;
+        transform: translateX(0);
+    }
+
+    .button-showmore button {
+        transform: translateX(0);
+    }
+
+    .ui-table {
+        overflow-x: scroll;
+    }
+
+    .ui-table::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ui-table .ui-table-row,
+    .ui-table.three-col-deux .ui-table-row {
+        grid-template-columns: repeat(3, 120px);
+    }
+
+    .ui-header {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .ui-table-heading {
+        border: none;
+    }
+
+    .ui-table .profile-course-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ui-table.three-col-deux .ui-table-row .ui-col:nth-child(3) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flashcard-main .lecture-information-button {
+        flex-direction: column;
+        padding: 24px 0;
+    }
+
+    .flashcard-main .lecture-information-button button {
+        width: 100%;
+        max-width: 375px;
+    }
+
 }
 
 @media(max-width: 525px) {
@@ -293,5 +368,9 @@
         line-height: 20px;
         -webkit-line-clamp: 2;
         line-clamp: 2;
+    }
+
+    .flashcard-main .lecture-information-button button {
+        max-width: unset;
     }
 }

@@ -15,5 +15,7 @@ Route::prefix('page-builder/')->as('page_builder.')->middleware(['auth'])->group
     Route::post('new-upload', 'ImageUploadController@upload')->name('pageBuilderImageUpload');
     Route::get('exam-online', 'PageBuilderController@examOnline')->name('pages.examOnline');
     Route::get('do-exam', 'PageBuilderController@doExamOnline')->name('pages.doExamOnline');
+    Route::get('dashboard', 'PageBuilderController@dashBoard')->name('pages.dashBoard');
+    Route::get('flashcard', 'PageBuilderController@flashCard')->name('pages.flashCard');
 
 });

@@ -101,6 +101,28 @@ class PageBuilderController extends Controller
         }
 
     }
+    public function dashBoard()
+    {
+        try {
+            // $data['row'] = $this->pageBuilderRepo->find($id);
+            return view('aorapagebuilder::pages.dashboard');
+        } catch (Exception $e) {
+            Toastr::error($e->getMessage(), 'Error!!');
+            return response()->json(['error' => $e->getMessage()], 503);
+        }
+
+    }
+    public function flashCard()
+    {
+        try {
+            // $data['row'] = $this->pageBuilderRepo->find($id);
+            return view('aorapagebuilder::pages.flashcard');
+        } catch (Exception $e) {
+            Toastr::error($e->getMessage(), 'Error!!');
+            return response()->json(['error' => $e->getMessage()], 503);
+        }
+
+    }
 
     public function edit($id)
     {

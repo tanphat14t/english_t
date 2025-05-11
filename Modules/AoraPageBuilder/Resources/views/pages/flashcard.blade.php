@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thi Online</title>
+    <title>Flashcard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -566,202 +566,133 @@
                 </nav>
             </div>
         </div>
-        <div class="content">
+        <div class="content flashcard-main">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-9">
                         <div class="heading">
-                            <h2 class="title">Thi online: Phát triển đề thi minh họa THPT 2025: Đề số 08</h2>
-                            <p class="last-note">(Ghi nhận lần cuối lúc: 11:21 - 09/05/2025)</p>
+                            <h2 class="title">Flashcard</h2>
                         </div>
-                        <div class="result-grid">
+                        <div class="result-grid flashcard">
                             <div class="result-item">
                                 <div class="inner">
                                     <div class="progress">
                                         <div class="condition-pass-wrap">
-                                            <div class="condition-pass" style="transform: rotate(294deg) translate(90px) rotate(-294deg);">
-                                                <img src="{{ asset('/public/images/icon-check.svg') }}" alt="">
+                                            <div class="condition-pass">
                                             </div>
                                         </div>
-                                        <svg class="rc-progress-circle" viewBox="0 0 100 100" role="presentation" style="width: 191px; height: 191px;">
-                                            <circle class="rc-progress-circle-trail" r="46.5" cx="50" cy="50" stroke="var(--extend-background-color, #F9F5FA)" stroke-linecap="round" stroke-width="7" style="stroke: var(--extend-background-color, #F9F5FA); stroke-dasharray: 191.532px, 292.168; stroke-dashoffset: 0; transform: rotate(152deg); transform-origin: 50px 50px; transition: stroke-dashoffset 0.3s, stroke-dasharray 0.3s, stroke 0.3s, stroke-width 0.06s 0.3s, opacity 0.3s; fill-opacity: 0;"></circle>
-                                            <circle class="rc-progress-circle-path" r="46.5" cx="50" cy="50" stroke-linecap="round" stroke-width="7" opacity="0" style="stroke: var(--extend-product-color-failed, #D43B37); stroke-dasharray: 191.532px, 292.168; stroke-dashoffset: 191.522; transform: rotate(152deg); transform-origin: 50px 50px; transition: stroke-dashoffset 0.3s, stroke-dasharray 0.3s, stroke 0.3s, stroke-width 0.06s 0.3s, opacity; fill-opacity: 0;"></circle>
-                                        </svg>
+                                        <svg class="rc-progress-circle" viewBox="0 0 100 100" role="presentation" style="width: 191px; height: 191px;"><circle class="rc-progress-circle-trail" r="46.5" cx="50" cy="50" stroke="var(--extend-background-color, #F9F5FA)" stroke-linecap="round" stroke-width="7" style="stroke: var(--extend-background-color, #F9F5FA); stroke-dasharray: 191.532px, 292.168; stroke-dashoffset: 0; transform: rotate(152deg); transform-origin: 50px 50px; transition: stroke-dashoffset 0.3s, stroke-dasharray 0.3s, stroke 0.3s, stroke-width 0.06s 0.3s, opacity 0.3s; fill-opacity: 0;"></circle><circle class="rc-progress-circle-path" r="46.5" cx="50" cy="50" stroke-linecap="round" stroke-width="7" opacity="1" style="stroke: #F55A8A; stroke-dasharray: 191.532px, 292.168; stroke-dashoffset: 173.964; transform: rotate(152deg); transform-origin: 50px 50px; transition: stroke-dashoffset 0.3s, stroke-dasharray 0.3s, stroke 0.3s, stroke-width 0.06s 0.3s, opacity; fill-opacity: 0;"></circle></svg>
                                         <div class="score-progress">
-                                            <div class="score-text">Điểm của bạn</div>
-                                            <div class="score-number">100</div>
+                                            <div class="score-text">Tiến độ học</div>
+                                            <div class="score-number">11%</div>
                                         </div>
                                     </div>
-                                    <div class="condition-text">Bạn chưa vượt qua bài thi này!</div>
+                                    <div class="flashcard-result">
+                                        <div class="chart-flash-card">
+                                            <div class="chart-flash-card-list">
+                                                <div class="chart-flash-card-item">
+                                                    <div class="flashcard-result-item"><span class="flashcard-result-number" style="color: #0EAF00;">29</span>&ensp;Đã thuộc</div>
+                                                </div>
+                                                <div class="chart-flash-card-item">
+                                                    <div class="flashcard-result-item flashcard"><span class="flashcard-result-number" style="color: #D43B37">3</span>&ensp;Chưa thuộc</div>
+                                                </div>
+                                                <div class="chart-flash-card-item">
+                                                    <div class="flashcard-result-item flashcard"><span class="flashcard-result-number" style="color: #23242D;">59</span>&ensp;Chưa học</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="result-item">
-                                <h4 class="title">Số câu đúng</h4>
+                                <h4 class="title">Tổng số từ</h4>
                                 <div class="result-item-content">
-                                    <span><img src="{{ asset('/public/images/icon-question1.svg') }}" alt=""></span>
-                                    0/40
+                                    91 Từ
                                 </div>
                             </div>
                             <div class="result-item">
-                                <h4 class="title">Thời gian làm bài</h4>
+                                <h4 class="title">Chọn luyện tập</h4>
                                 <div class="result-item-content">
-                                    <span><img src="{{ asset('/public/images/icon-time.svg') }}" alt=""></span>
-                                    0:0:52
+                                    <div class="select-display-mode">
+                                        <div class="dropdown-mode">
+                                            <span class="selected-mode">10 từ </span> <!-- Thêm dòng này -->
+                                            <ul class="list-mode">
+                                                <li data-mode="10">10 từ</li>
+                                                <li data-mode="20">20 từ</li>
+                                                <li data-mode="40">40 từ</li>
+                                                <li data-mode="80">80 từ</li>
+                                                <li data-mode="91">91 từ</li>
+                                            </ul>
+                                            <svg class="MuiSvgIcon-root" viewBox="0 0 24 24">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="result-item">
-                                <h4 class="title">Số lần tạm dừng</h4>
+                                <h4 class="title">Ưu tiên từ</h4>
                                 <div class="result-item-content">
-                                    <span><img src="{{ asset('/public/images/icon-pause1.svg') }}" alt=""></span>
-                                    0/3
+                                    <div class="select-display-mode">
+                                        <div class="dropdown-mode">
+                                            <span class="selected-mode">Mặc định</span> <!-- Thêm dòng này -->
+                                            <ul class="list-mode">
+                                                <li data-mode="macdinh">Mặc định</li>
+                                                <li data-mode="chuahoc">Chưa học</li>
+                                                <li data-mode="danho">Đã nhớ</li>
+                                                <li data-mode="chuanho">Chưa nhớ</li>
+                                            </ul>
+                                            <svg class="MuiSvgIcon-root" viewBox="0 0 24 24">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="result-item">
-                                <h4 class="title">Số lần làm bài</h4>
+                            <div class="result-item" style="z-index: 1">
+                                <h4 class="title">Tự động đọc Audio</h4>
                                 <div class="result-item-content">
-                                    <span><img src="{{ asset('/public/images/icon-video.svg') }}" alt=""></span>
-                                    2/10
+                                    <input type="checkbox" hidden="hidden" id="username">
+                                    <label class="switch" for="username"></label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="encourage">
-                            <div class="encourage-image">
-                                <img src="{{ asset('/public/images/icon-sad3.svg') }}" alt="">
-                            </div>
-                            <div class="encourage-tooltip">
-                                <span> Hành trình vạn dặm đều bắt đầu từ một bước chân, em đừng chùn bước nhé!</span>
+                            <div class="result-item" style="z-index: 1">
+                                <h4 class="title">Chọn game để chơi</h4>
+                                <div class="result-item-content">
+                                    <div class="dropdown checkbox" data-control="checkbox-dropdown">
+                                        <label class="dropdown-label">Tất cả các loại game</label>
+
+                                        <div class="dropdown-list">
+                                            <a href="#" data-toggle="check-all" class="dropdown-option">
+                                                Tất cả các loại game
+                                            </a>
+
+                                            <label class="dropdown-option">
+                                                <input type="checkbox" name="dropdown-group" value="Game quiz" />
+                                                Game quiz
+                                            </label>
+
+                                            <label class="dropdown-option">
+                                                <input type="checkbox" name="dropdown-group" value="Game điền từ" />
+                                                Game điền từ
+                                            </label>
+
+                                            <label class="dropdown-option">
+                                                <input type="checkbox" name="dropdown-group" value="matching" />
+                                                Game matching
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="lecture-information-button">
-                            <button class="btn-border-primary review-btn">Xem giải thích chi tiết</button>
-                            <button class="btn-bg-primary remake-btn">Làm lại</button>
-                        </div>
-                        <div class="lecture-information-button">
-                            <button class="doexam-btn">Làm bài</button>
+                            <button class="btn-border-primary review-btn">Học từ</button>
+                            <button class="btn-border-blue pronunciation-btn">Luyện phát âm</button>
+                            <button class="btn-bg-primary remake-btn">Chơi game</button>
                         </div>
 
-                        <div class="lecture-page-block-left">
-                            <h4>
-                                <span><img src="{{asset('/public/images/icon-history.svg')}}" alt=""></span>
-                                Lịch sử làm bài kiểm tra
-                            </h4>
-                            <div class="chart-container">
-                                <svg version="1.1" class="highcharts-root" style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="815" height="400" viewBox="0 0 815 400" role="img" aria-label="">
-                                    <desc>Created with Highcharts 10.3.3</desc>
-                                    <defs>
-                                        <clipPath id="highcharts-omfjoi1-1-">
-                                            <rect x="0" y="0" width="767" height="296" fill="none"></rect>
-                                        </clipPath>
-                                        <clipPath id="highcharts-omfjoi1-4-">
-                                            <rect x="0" y="0" width="767" height="296" fill="none"></rect>
-                                        </clipPath>
-                                    </defs>
-                                    <rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="815" height="400" rx="0" ry="0"></rect>
-                                    <rect fill="none" class="highcharts-plot-background" x="38" y="10" width="767" height="296"></rect>
-                                    <g class="highcharts-pane-group" data-z-index="0"></g>
-                                    <g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1">
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 421.5 10 L 421.5 306" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 804.5 10 L 804.5 306" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 37.5 10 L 37.5 306" opacity="1"></path>
-                                    </g>
-                                    <g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1">
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 38 306.5 L 805 306.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 38 257.5 L 805 257.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 38 207.5 L 805 207.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 38 158.5 L 805 158.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 38 109.5 L 805 109.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 38 59.5 L 805 59.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 38 9.5 L 805 9.5" opacity="1"></path>
-                                    </g>
-                                    <rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="38" y="10" width="767" height="296"></rect>
-                                    <g class="highcharts-axis highcharts-xaxis" data-z-index="2">
-                                        <path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 38 306.5 L 805 306.5"></path>
-                                    </g>
-                                    <g class="highcharts-axis highcharts-yaxis" data-z-index="2">
-                                        <path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="0" data-z-index="7" d="M 38 10 L 38 306"></path>
-                                    </g>
-                                    <g class="highcharts-series-group" data-z-index="3">
-                                        <g class="highcharts-series highcharts-series-0 highcharts-spline-series" data-z-index="0.1" opacity="1" transform="translate(38,10) scale(1 1)" clip-path="url(#highcharts-omfjoi1-4-)">
-                                            <path fill="none" d="M 191.75 49.33333333332999 C 191.75 49.33333333332999 575.25 296 575.25 296" class="highcharts-graph" data-z-index="1" stroke="var(--extend-success-color-default, #0EC122)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-                                            <path fill="none" d="M 191.75 49.33333333332999 C 191.75 49.33333333332999 575.25 296 575.25 296" data-z-index="2" class="highcharts-tracker-line" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22" style="cursor: pointer;"></path>
-                                        </g>
-                                        <g class="highcharts-markers highcharts-series-0 highcharts-spline-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(38,10) scale(1 1)" clip-path="none" style="cursor: pointer;">
-                                            <path fill="var(--extend-success-color-default, #0EC122)" d="M 191 49.33333333332999 A 0 0 0 1 1 191 49.33333333332999 Z" class="highcharts-halo highcharts-color-undefined" data-z-index="-1" fill-opacity="0.25" visibility="hidden"></path>
-                                            <path fill="var(--extend-success-color-default, #0EC122)" d="M 191 53.33333333332999 A 4 4 0 1 1 191.00399999933333 53.33333133333016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path>
-                                            <path fill="var(--extend-success-color-default, #0EC122)" d="M 575 300 A 4 4 0 1 1 575.0039999993334 299.9999980000002 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path>
-                                        </g>
-                                        <g class="highcharts-series highcharts-series-1 highcharts-spline-series" data-z-index="0.1" opacity="1" transform="translate(38,10) scale(1 1)" clip-path="url(#highcharts-omfjoi1-4-)">
-                                            <path fill="none" d="M 191.75 148 C 191.75 148 575.25 296 575.25 296" class="highcharts-graph" data-z-index="1" stroke="var(--extend-error-color-default, #EF5350)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-                                            <path fill="none" d="M 191.75 148 C 191.75 148 575.25 296 575.25 296" data-z-index="2" class="highcharts-tracker-line" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22" style="cursor: pointer;"></path>
-                                        </g>
-                                        <g class="highcharts-markers highcharts-series-1 highcharts-spline-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(38,10) scale(1 1)" clip-path="none" style="cursor: pointer;">
-                                            <path fill="var(--extend-error-color-default, #EF5350)" d="M 191 148 A 0 0 0 1 1 191 148 Z" class="highcharts-halo highcharts-color-undefined" data-z-index="-1" fill-opacity="0.25" visibility="hidden"></path>
-                                            <path fill="var(--extend-error-color-default, #EF5350)" d="M 191 152 A 4 4 0 1 1 191.00399999933333 151.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path>
-                                            <path fill="var(--extend-error-color-default, #EF5350)" d="M 575 300 A 4 4 0 1 1 575.0039999993334 299.9999980000002 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path>
-                                        </g>
-                                    </g>
-                                    <g class="highcharts-exporting-group" data-z-index="3">
-                                        <g class="highcharts-no-tooltip highcharts-button highcharts-contextbutton" stroke-linecap="round" style="cursor: pointer;" transform="translate(781,10)">
-                                            <title>Chart context menu</title>
-                                            <rect fill="#ffffff" class="highcharts-button-box" x="0.5" y="0.5" width="24" height="22" rx="2" ry="2" stroke="none" stroke-width="1"></rect><text x="0" data-z-index="1" y="15.5" style="color: rgb(51, 51, 51); font-weight: normal; fill: rgb(51, 51, 51);"></text>
-                                        </g>
-                                    </g><text x="408" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color: rgb(51, 51, 51); font-size: 18px; fill: rgb(51, 51, 51);" y="24"></text><text x="408" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="397"></text>
-                                    <g class="highcharts-legend highcharts-no-tooltip" data-z-index="7" transform="translate(251,357)">
-                                        <rect fill="none" class="highcharts-legend-box" rx="0" ry="0" stroke="#999999" stroke-width="0" x="0" y="0" width="313" height="28"></rect>
-                                        <g data-z-index="1">
-                                            <g>
-                                                <g class="highcharts-legend-item highcharts-spline-series highcharts-color-undefined highcharts-series-0" data-z-index="1" transform="translate(8,3)">
-                                                    <path fill="none" class="highcharts-graph" stroke-width="2" stroke-linecap="round" d="M 1 13 L 1 13" stroke="var(--extend-success-color-default, #0EC122)"></path>
-                                                    <path fill="var(--extend-success-color-default, #0EC122)" d="M 1.0000000000000002 17 A 4 4 0 1 1 1.003999999333336 16.99999800000017 Z" class="highcharts-point" stroke="#ffffff" stroke-width="0" opacity="1"></path>
-                                                </g>
-                                                <g class="highcharts-legend-item highcharts-spline-series highcharts-color-undefined highcharts-series-1" data-z-index="1" transform="translate(175,3)">
-                                                    <path fill="none" class="highcharts-graph" stroke-width="2" stroke-linecap="round" d="M 1 13 L 1 13" stroke="var(--extend-error-color-default, #EF5350)"></path>
-                                                    <path fill="var(--extend-error-color-default, #EF5350)" d="M 1.0000000000000002 17 A 4 4 0 1 1 1.003999999333336 16.99999800000017 Z" class="highcharts-point" stroke="#ffffff" stroke-width="0" opacity="1"></path>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                    <g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="229.75" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" text-anchor="middle" transform="translate(0,0)" y="341" opacity="1">10:47:12 25/04</text><text x="613.25" text-anchor="middle" transform="translate(0,0)" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" y="341" opacity="1">11:18:37 09/05</text></g>
-                                    <g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="23" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" text-anchor="end" transform="translate(0,0)" y="311" opacity="1">0</text><text x="23" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" text-anchor="end" transform="translate(0,0)" y="262" opacity="1">5</text><text x="23" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" text-anchor="end" transform="translate(0,0)" y="212" opacity="1">10</text><text x="23" text-anchor="end" transform="translate(0,0)" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" y="163" opacity="1">15</text><text x="23" text-anchor="end" transform="translate(0,0)" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" y="114" opacity="1">20</text><text x="23" text-anchor="end" transform="translate(0,0)" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" y="64" opacity="1">25</text><text x="23" text-anchor="end" transform="translate(0,0)" style="color: var(--extend-default-text, #000); cursor: default; font-size: 14px; font-weight: 400; fill: var(--extend-default-text, #000);" y="15" opacity="1">30</text></g>
-                                    <g class="highcharts-label highcharts-tooltip highcharts-color-undefined" data-z-index="8" style="cursor: default; white-space: nowrap; pointer-events: none;" transform="translate(158,98)" opacity="0" visibility="hidden">
-                                        <path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 140.5 0.5 C 143.5 0.5 143.5 0.5 143.5 3.5 L 143.5 41.5 C 143.5 44.5 143.5 44.5 140.5 44.5 L 77.5 44.5 L 71.5 50.5 L 65.5 44.5 L 3.5 44.5 C 0.5 44.5 0.5 44.5 0.5 41.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="5" stroke="#000000" stroke-opacity="0.049999999999999996" transform="translate(1, 1)"></path>
-                                        <path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 140.5 0.5 C 143.5 0.5 143.5 0.5 143.5 3.5 L 143.5 41.5 C 143.5 44.5 143.5 44.5 140.5 44.5 L 77.5 44.5 L 71.5 50.5 L 65.5 44.5 L 3.5 44.5 C 0.5 44.5 0.5 44.5 0.5 41.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="3" stroke="#000000" stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></path>
-                                        <path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 140.5 0.5 C 143.5 0.5 143.5 0.5 143.5 3.5 L 143.5 41.5 C 143.5 44.5 143.5 44.5 140.5 44.5 L 77.5 44.5 L 71.5 50.5 L 65.5 44.5 L 3.5 44.5 C 0.5 44.5 0.5 44.5 0.5 41.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="1" stroke="#000000" stroke-opacity="0.15" transform="translate(1, 1)"></path>
-                                        <path fill="rgba(247,247,247,0.85)" class="highcharts-label-box highcharts-tooltip-box" d="M 3.5 0.5 L 140.5 0.5 C 143.5 0.5 143.5 0.5 143.5 3.5 L 143.5 41.5 C 143.5 44.5 143.5 44.5 140.5 44.5 L 77.5 44.5 L 71.5 50.5 L 65.5 44.5 L 3.5 44.5 C 0.5 44.5 0.5 44.5 0.5 41.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="1" stroke="var(--extend-error-color-default, #EF5350)"></path><text x="8" data-z-index="1" y="18" style="color: rgb(51, 51, 51); font-size: 12px; fill: rgb(51, 51, 51);">
-                                            <tspan style="font-size: 10px;">10:47:12 25/04</tspan>
-                                            <tspan class="highcharts-br" dy="15" x="8">​</tspan>
-                                            <tspan style="color: var(--extend-error-color-default, #EF5350); fill: var(--extend-error-color-default, #EF5350);">●</tspan> Số câu trả lời sai: <tspan style="font-weight: bold;">15</tspan>
-                                            <tspan class="highcharts-br">​</tspan>
-                                        </text>
-                                    </g>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="box document">
-                            <div class="scenario-attach mobile">
-                                <div class="heading d-flex align-items-center justify-content-between m-0 pb-1">
-                                    <span>Tài liệu đi kèm bài thi</span>
-                                    <span>Tải về</span>
-                                </div>
-                                <div class="content d-flex align-items-center justify-content-between m-0 pb-1">
-                                    <a href="/" target="_blank" download>[ Cô Vũ Mai Phương ] Bộ đề VIP 2025 - PRO 3M_Đề số 08.pdf</a>
-                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_8744_51494)">
-                                            <path d="M20.6466 14.0838C20.4113 13.8483 20.125 13.7305 19.7886 13.7305H13.9326L12.2163 15.4467C11.7283 15.9178 11.1562 16.1535 10.5 16.1535C9.84389 16.1535 9.27164 15.9181 8.78368 15.4467L7.07995 13.7305H1.21152C0.875048 13.7305 0.589009 13.8484 0.353361 14.0838C0.117758 14.3193 0 14.6054 0 14.9421V18.9804C0 19.317 0.117758 19.6031 0.353361 19.8386C0.588964 20.0741 0.875004 20.1918 1.21152 20.1918H19.7887C20.125 20.1918 20.4113 20.0741 20.6466 19.8386C20.8823 19.6031 21 19.317 21 18.9804V14.9421C21 14.6054 20.8823 14.3193 20.6466 14.0838ZM15.9143 18.3368C15.7542 18.4967 15.5649 18.5766 15.3461 18.5766C15.1273 18.5766 14.9382 18.4967 14.7782 18.3368C14.6185 18.1769 14.5386 17.9877 14.5386 17.7691C14.5386 17.5503 14.6185 17.3608 14.7782 17.2012C14.9382 17.0412 15.1273 16.9611 15.3461 16.9611C15.5649 16.9611 15.7542 17.0412 15.9143 17.2012C16.074 17.3608 16.1539 17.5503 16.1539 17.7691C16.1539 17.9876 16.074 18.1769 15.9143 18.3368ZM19.1448 18.3368C18.9851 18.4967 18.7957 18.5766 18.5769 18.5766C18.3582 18.5766 18.169 18.4967 18.009 18.3368C17.8493 18.1769 17.7694 17.9877 17.7694 17.7691C17.7694 17.5503 17.8493 17.3608 18.009 17.2012C18.1689 17.0412 18.3581 16.9611 18.5769 16.9611C18.7957 16.9611 18.985 17.0412 19.1448 17.2012C19.3047 17.3608 19.3847 17.5503 19.3847 17.7691C19.3847 17.9876 19.3048 18.1769 19.1448 18.3368Z" fill="var(--extend-info-color, #81D4FA)"></path>
-                                            <path d="M9.93205 14.2979C10.0836 14.4576 10.2729 14.5375 10.4999 14.5375C10.7272 14.5375 10.9162 14.4576 11.0678 14.2979L16.7217 8.64392C16.9825 8.39997 17.0415 8.10544 16.8984 7.76048C16.7556 7.43245 16.5073 7.26841 16.1538 7.26823H12.923V1.61437C12.923 1.39565 12.8429 1.20633 12.6834 1.04649C12.5233 0.886604 12.3341 0.806641 12.1155 0.806641H8.88439C8.66576 0.806641 8.47644 0.886604 8.31651 1.04649C8.15672 1.20633 8.07675 1.3956 8.07675 1.61437V7.26827H4.84598C4.49244 7.26827 4.24438 7.43249 4.10133 7.76052C3.95838 8.10535 4.01721 8.40001 4.2781 8.64397L9.93205 14.2979Z" fill="var(--extend-info-color, #81D4FA)"></path>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_8744_51494">
-                                                <rect width="21" height="21" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="box" id="comment-page-container">
+                        <div class="box" id="comment-page-container" style="z-index: 0;">
                             <div class="comment-header">
                                 <div class="title">Thảo luận</div>
                             </div>
@@ -816,18 +747,15 @@
                                             <div class="tree-item-panel">
                                                 <div class="tree-item-panel-icon">
                                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14ZM9.87005 7.21132L5.7517 9.89292C5.47448 10.1219 5 9.95897 5 9.63753V4.3646C5 4.04096 5.47448 3.87803 5.7517 4.10701L9.87005 6.69614C10.0433 6.83924 10.0433 7.06821 9.87005 7.21132Z" fill="#62646a"></path>
-                                                    </svg>
-                                                    <svg class="d-none" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14ZM7.19018 6.34293C7.19134 6.22234 7.1925 6.10176 7.1925 5.9813C7.1925 5.85011 7.1927 5.71893 7.19289 5.58776C7.19336 5.28179 7.19382 4.97593 7.19177 4.67042C7.18884 4.25735 6.96 4 6.60174 4C6.24202 4 6.00732 4.25077 6.00513 4.66823C5.99928 5.66034 5.99562 6.65319 6.01025 7.6453C6.01317 7.81565 6.05704 8.03352 6.16671 8.14757C6.90516 8.91523 7.6597 9.66681 8.42228 10.4111C8.66209 10.645 9.00792 10.6151 9.23238 10.384C9.46781 10.1413 9.45319 9.78379 9.1812 9.50816C8.95913 9.28367 8.73547 9.06068 8.5118 8.83767C8.12939 8.45641 7.74695 8.07511 7.37236 7.68624C7.27366 7.58315 7.20785 7.40915 7.20054 7.26439C7.18426 6.95821 7.18722 6.65051 7.19018 6.34293Z" fill="#62646a"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.55914 0C1.25034 0 1 0.245434 1 0.548193C1 0.850951 1.25034 1.09639 1.55914 1.09639H10.8602C11.9767 1.09639 12.8817 1.98372 12.8817 3.07831V12.4518C12.8817 12.7546 13.1321 13 13.4409 13C13.7497 13 14 12.7546 14 12.4518V3.07831C14 1.37821 12.5943 0 10.8602 0H1.55914ZM0 4C0 2.89543 0.895431 2 2 2H10C11.1046 2 12 2.89543 12 4V12C12 13.1046 11.1046 14 10 14H2C0.895431 14 0 13.1046 0 12V4ZM3.27273 6.5C3.27273 6.22386 3.49658 6 3.77273 6H8.22727C8.50342 6 8.72727 6.22386 8.72727 6.5C8.72727 6.77614 8.50342 7 8.22727 7H3.77273C3.49659 7 3.27273 6.77614 3.27273 6.5ZM3.27273 8.5C3.27273 8.22386 3.49658 8 3.77273 8H8.22727C8.50342 8 8.72727 8.22386 8.72727 8.5C8.72727 8.77614 8.50342 9 8.22727 9H3.77273C3.49659 9 3.27273 8.77614 3.27273 8.5ZM3.77273 10C3.49658 10 3.27273 10.2239 3.27273 10.5C3.27273 10.7761 3.49658 11 3.77273 11H6.04545C6.3216 11 6.54545 10.7761 6.54545 10.5C6.54545 10.2239 6.3216 10 6.04545 10H3.77273Z" fill="#f40c44"></path>
                                                     </svg>
                                                 </div>
                                                 <div class="tree-item-panel-label">
                                                     <div class="tree-box-item-content">
-                                                        <a href="/">Phát triển đề thi minh họa THPT 2025: Đề số 05</a>
+                                                        <a href="/" style="color: #f40c44">Flashcard</a>
                                                     </div>
                                                     <div class="tree-box-item-new">
-                                                        <img src="{{ asset('/public/images/new-topic.svg') }}" alt="">
+
                                                     </div>
                                                 </div>
                                             </div>
