@@ -14219,17 +14219,17 @@
         },
         {
             "name": "spatie/backtrace",
-            "version": "1.7.2",
-            "version_normalized": "1.7.2.0",
+            "version": "1.7.4",
+            "version_normalized": "1.7.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/backtrace.git",
-                "reference": "9807de6b8fecfaa5b3d10650985f0348b02862b2"
+                "reference": "cd37a49fce7137359ac30ecc44ef3e16404cccbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/backtrace/zipball/9807de6b8fecfaa5b3d10650985f0348b02862b2",
-                "reference": "9807de6b8fecfaa5b3d10650985f0348b02862b2",
+                "url": "https://api.github.com/repos/spatie/backtrace/zipball/cd37a49fce7137359ac30ecc44ef3e16404cccbe",
+                "reference": "cd37a49fce7137359ac30ecc44ef3e16404cccbe",
                 "shasum": ""
             },
             "require": {
@@ -14242,7 +14242,7 @@
                 "spatie/phpunit-snapshot-assertions": "^4.2 || ^5.1.6",
                 "symfony/var-dumper": "^5.1 || ^6.0 || ^7.0"
             },
-            "time": "2025-04-28T14:55:53+00:00",
+            "time": "2025-05-08T15:41:09+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -14269,7 +14269,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/backtrace/tree/1.7.2"
+                "source": "https://github.com/spatie/backtrace/tree/1.7.4"
             },
             "funding": [
                 {
@@ -15568,15 +15568,15 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/spn4/service.git",
-                "reference": "cc020a1a4e75ba9fbe8bbb27a576d8e35b07670a"
+                "reference": "e34df0c6ae4dbe866a137ccab6955aec473df968"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/spn4%2Fservice/repository/archive.zip?sha=cc020a1a4e75ba9fbe8bbb27a576d8e35b07670a",
-                "reference": "cc020a1a4e75ba9fbe8bbb27a576d8e35b07670a",
+                "url": "https://gitlab.com/api/v4/projects/spn4%2Fservice/repository/archive.zip?sha=e34df0c6ae4dbe866a137ccab6955aec473df968",
+                "reference": "e34df0c6ae4dbe866a137ccab6955aec473df968",
                 "shasum": ""
             },
-            "time": "2025-03-17T16:15:20+00:00",
+            "time": "2025-05-07T11:43:10+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
@@ -15608,7 +15608,7 @@
             "description": "Basic Service Provider for Spondonit application",
             "support": {
                 "issues": "https://gitlab.com/spn4/service/-/issues",
-                "source": "https://gitlab.com/spn4/service/-/tree/v5.1.1"
+                "source": "https://gitlab.com/spn4/service/-/tree/v5.2.0"
             },
             "install-path": "../spondonit/service"
         },
