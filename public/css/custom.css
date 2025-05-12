@@ -268,9 +268,9 @@
   }
 
   to {
-      -webkit-transform: translateX(-2000px) scale(.7);
-      transform: translateX(-2000px) scale(.7);
-      opacity: .7
+      -webkit-transform: translateX(-2000px) scale(0);
+      transform: translateX(-2000px) scale(0);
+      opacity: 0
   }
 }
 
@@ -288,9 +288,9 @@
   }
 
   to {
-      -webkit-transform: translateX(-2000px) scale(.7);
-      transform: translateX(-2000px) scale(.7);
-      opacity: .7
+      -webkit-transform: translateX(-2000px) scale(0);
+      transform: translateX(-2000px) scale(0);
+      opacity: 0
   }
 }
 

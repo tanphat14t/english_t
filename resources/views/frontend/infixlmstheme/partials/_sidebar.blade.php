@@ -4,7 +4,7 @@
 @else
     <nav class="sidebar">
         <div class="sidebar_iner">
-            <div class="sidebar-user text-center">
+            {{-- <div class="sidebar-user text-center">
                 <div class="sidebar-profile mx-auto">
                     <img src="{{getProfileImage(\Illuminate\Support\Facades\Auth::user()->image,Auth::user()->name)}}"
                          alt="">
@@ -13,7 +13,7 @@
                 @if(isModuleActive('UserGroup') && \Illuminate\Support\Facades\Auth::user()->userGroup  && \Illuminate\Support\Facades\Auth::user()->userGroup->group->status)
                     <p class="text-nowrap mb-2">{{\Illuminate\Support\Facades\Auth::user()->userGroup->group->title}}</p>
                 @endif
-            </div>
+            </div> --}}
             <!-- new sidebar end -->
 
             <ul class="list-unstyled pt-0">

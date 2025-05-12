@@ -17,9 +17,9 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-12">
-                            {{ Form::open(['class' => 'form-horizontal', 'files' => true, 'route' => ['flashcard-update', $flashcard->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data', 'id' => 'question_bank']) }}
-                            <input type="hidden" name="url" id="url" value="{{ URL::to('/') }}">
                             <div class="white-box">
+                                {{ Form::open(['class' => 'form-horizontal', 'files' => true, 'route' => ['flashcard-update', $flashcard->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data', 'id' => 'question_bank']) }}
+                                <input type="hidden" name="url" id="url" value="{{ URL::to('/') }}">
                                 <div class="add-ques-word">
                                     <div class="row">
                                         <div class="col-xl-12 mb-5">
@@ -33,102 +33,91 @@
                                         </div>
                                     </div>
                                     <div id="list-word">
-                                        @if ($flashcard->flashcardAssign)
-                                            @foreach ($flashcard->flashcardAssign as $key => $item)
-                                                <div class="card card-word p-3 mb-3"
-                                                    @if ($key > 0) id="card-word-{{ $key + 1 }}" @endif>
-                                                    <input type="hidden" name="learn_word[{{ $key }}][id]"
-                                                        value="{{ $item->id }}">
-                                                    <div class="row">
-                                                        <div class="col-xl-12">
-                                                            <h5>Từ vựng <span class="word-number">{{ $key + 1 }}</span>
-                                                            </h5>
-                                                            @if ($key > 0)
-                                                                <div class="delete-word" data-count="{{ $key + 1 }}"><i
-                                                                        class="ti-close"></i></div>
-                                                            @endif
+                                        <div class="card card-word p-3 mb-3">
+                                            <div class="row">
+                                                <input type="hidden" name="word_id" value="{{ @$word->id }}">
+                                                <div class="col-xl-6">
+                                                    <div class="">
+                                                        <div class="input-effect mt-25">
+                                                            <label> Từ vựng <span class="required_mark">*</span>
+                                                            </label>
+                                                            <input class="primary_input_field" type="text"
+                                                                name="word" value="{{@$word->word}}">
+                                                            <span class="focus-border"></span>
                                                         </div>
-                                                        <div class="col-xl-6">
-                                                            <div class=" mt-25">
-                                                                <div class="input-effect">
-                                                                    <label> Từ vựng <span class="required_mark">*</span>
-                                                                    </label>
-                                                                    <input class="primary_input_field" type="text"
-                                                                        name="learn_word[{{ $key }}][word]"
-                                                                        value="{{ $item->word }}">
-                                                                    <span class="focus-border"></span>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class=" mt-25">
-                                                                <div class="input-effect">
-                                                                    <label> Loại từ vựng <span
-                                                                            class="required_mark">*</span>
-                                                                    </label>
-                                                                    <input class="primary_input_field name" type="text"
-                                                                        name="learn_word[{{ $key }}][type]"
-                                                                        value="{{ $item->word_type }}">
-                                                                    <span class="focus-border"></span>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class=" mt-25">
-                                                                <div class="input-effect">
-                                                                    <label> Phiên âm <span class="required_mark">*</span>
-                                                                    </label>
-                                                                    <input class="primary_input_field name" type="text"
-                                                                        name="learn_word[{{ $key }}][read]"
-                                                                        value="{{ $item->word_read }}">
-                                                                    <span class="focus-border"></span>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class=" mt-25">
-                                                                <div class="input-effect">
-                                                                    <label> Nghĩa tiêng Việt <span
-                                                                            class="required_mark">*</span>
-                                                                    </label>
-                                                                    <input class="primary_input_field name" type="text"
-                                                                        name="learn_word[{{ $key }}][trans]"
-                                                                        value="{{ $item->word_trans }}">
-                                                                    <span class="focus-border"></span>
-                                                                </div>
-                                                            </div>
+                                                    </div>
+                                                    <div class="">
+                                                        <div class="input-effect mt-25">
+                                                            <label> Loại từ vựng <span class="required_mark">*</span>
+                                                            </label>
+                                                            <input class="primary_input_field name" type="text"
+                                                                name="type" value="{{@$word->word_type}}">
+                                                            <span class="focus-border"></span>
                                                         </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="input-effect  mt-25">
-                                                                <label> <span class="cnt-quest"> Giải thích</span><span
-                                                                        class="required_mark">*</span></label>
-                                                                <textarea class="textArea lms_summernote" cols="30" rows="10" name="learn_word[{{ $key }}][note]">{{ $item->word_note }}</textarea>
-                                                                <span class="focus-border textarea"></span>
-                                                            </div>
+                                                    </div>
+                                                    <div class="">
+                                                        <div class="input-effect  mt-25">
+                                                            <label> Phiên âm <span class="required_mark">*</span>
+                                                            </label>
+                                                            <input class="primary_input_field name" type="text"
+                                                                name="word_read" value="{{@$word->word_read}}">
+                                                            <span class="focus-border"></span>
+        
+                                                        </div>
+                                                    </div>
+                                                    <div class="">
+                                                        <div class="input-effect mt-25">
+                                                            <label> Nghĩa tiêng Việt <span class="required_mark">*</span>
+                                                            </label>
+                                                            <input class="primary_input_field name" type="text"
+                                                                name="word_trans" value="{{@$word->word_trans}}">
+                                                            <span class="focus-border"></span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endforeach
-                                        @endif
+                                                <div class="col-lg-6">
+                                                    <div class="input-effect  mt-25">
+                                                        <label> <span class="cnt-quest"> Giải thích</span><span
+                                                                class="required_mark">*</span></label>
+                                                        <textarea class="textArea lms_summernote" cols="30" rows="10" name="word_note">{!!@$word->word_trans!!}</textarea>
+                                                        <span class="focus-border textarea"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row mt-40">
                                         <div class="col-lg-12 text-center">
-                                            <button type="button" class="primary-btn fix-gr-bg" id="add-new-word">
-                                                <i class="ti-add"></i>
-                                                {{ __('Thêm từ mới') }}
-                                            </button>
                                             <button class="primary-btn fix-gr-bg questionSubmitBtn" data-toggle="tooltip"
                                                 type="submit">
                                                 <i class="ti-check"></i>
-                                                @if (isset($bank))
-                                                    {{ __('common.Update') }}
-                                                @else
-                                                    {{ __('common.Save') }}
-                                                @endif
-                                                {{ __('quiz.Question') }}
+                                                Cập nhật
                                             </button>
                                         </div>
                                     </div>
                                 </div>
+                                {{ Form::close() }}
+                                <div class="QA_section check_box_table mt-5">
+                                    <div class="QA_table word_table">
+                                        <div class="">
+                                            <table id="lms_table" class="table Crm_table_active3 quiz-bank-checkbox">
+                                                <thead>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Từ vựng</th>
+                                                        <th>Loại từ vựng</th>
+                                                        <th>Phiên âm</th>
+                                                        <th>Nghĩa tiêng Việt</th>
+                                                        <th>{{ __('common.Action') }}</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            {{ Form::close() }}
                         </div>
                     </div>
                 </div>
@@ -204,7 +193,90 @@
     </div>
 @endsection
 @push('scripts')
+    @php
+        $url = route('getFlashcardAllWord', $flashcard->id);
+    @endphp
     <script>
+        let table = $('#lms_table').DataTable({
+            bLengthChange: true,
+            "bDestroy": true,
+            stateSave: true,
+            processing: true,
+            serverSide: true,
+            order: [
+                [1, "desc"]
+            ],
+            "ajax": $.fn.dataTable.pipeline({
+                url: '{!! $url !!}',
+                pages: 5,
+                data: function(d) {
+                    d.group = 1
+                }
+            }),
+            columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex',
+                    orderable: false
+                },
+                {
+                    data: 'word',
+                    name: 'word'
+                },
+                {
+                    data: 'type',
+                    name: 'type',
+                    orderable: false
+                },
+                {
+                    data: 'word_read',
+                    name: 'word_read',
+                    orderable: false
+                },
+                {
+                    data: 'word_trans',
+                    name: 'word_trans',
+                    orderable: false
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false
+                }
+            ],
+            columnDefs: [{
+                    visible: false
+                }, {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 1,
+                    targets: 4
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ],
+            responsive: true,
+            language: {
+                emptyTable: "{{ __('common.No data available in the table') }}",
+                search: "<i class='ti-search'></i>",
+                searchPlaceholder: '{{ __('common.Quick Search') }}',
+                paginate: {
+                    next: "<i class='ti-arrow-right'></i>",
+                    previous: "<i class='ti-arrow-left'></i>"
+                }
+            },
+            dom: '{{ isModuleActive('AdvanceQuiz') ? 'rtip' : 'Blfrtip' }}',
+            paging: true,
+            "lengthChange": true,
+            "lengthMenu": [
+                [10, 25, 50, 100, -1],
+                [10, 25, 50, 100, "All"]
+            ]
+        });
+
         $("body").on('change', '.fileUpload1', function() {
             let placeholder = $(this).closest(".primary_file_uploader").find(".filePlaceholder");
             let fileInput = event.srcElement;

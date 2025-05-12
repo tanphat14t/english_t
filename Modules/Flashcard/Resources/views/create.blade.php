@@ -15,123 +15,143 @@
             @endif
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            @if (isset($falshcard))
-                                {{ Form::open(['class' => 'form-horizontal', 'files' => true, 'route' => ['question-bank-update', $bank->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data', 'id' => 'question_bank']) }}
-                            @else
-                                @if (permissionCheck('flashcard.store'))
-                                    {{ Form::open([
-                                        'class' => 'form-horizontal',
-                                        'files' => true,
-                                        'route' => 'flashcard.store',
-                                        'method' => 'POST',
-                                        'enctype' => 'multipart/form-data',
-                                        'id' => 'question_bank',
-                                    ]) }}
-                                @endif
+                    <div class="white-box">
+                        @if (isset($falshcard))
+                            {{ Form::open(['class' => 'form-horizontal', 'files' => true, 'route' => ['question-bank-update', $bank->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data', 'id' => 'question_bank']) }}
+                        @else
+                            @if (permissionCheck('flashcard.store'))
+                                {{ Form::open([
+                                    'class' => 'form-horizontal',
+                                    'files' => true,
+                                    'route' => 'flashcard.store',
+                                    'method' => 'POST',
+                                    'enctype' => 'multipart/form-data',
+                                    'id' => 'question_bank',
+                                ]) }}
                             @endif
-                            <input type="hidden" name="url" id="url" value="{{ URL::to('/') }}">
-                            <div class="white-box">
-                                <div class="add-ques-word">
+                        @endif
+                        <input type="hidden" name="url" id="url" value="{{ URL::to('/') }}">
+                        <div class="add-ques-word">
+                            <div class="row">
+                                <div class="col-xl-12 mb-5">
+                                    <div class="input-effect">
+                                        <label> Tiều đề <span class="required_mark">*</span>
+                                        </label>
+                                        <input class="primary_input_field" type="text" name="title" value="">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="list-word">
+                                <div class="card card-word p-3 mb-3">
                                     <div class="row">
-                                        <div class="col-xl-12 mb-5">
-                                            <div class="input-effect">
-                                                <label> Tiều đề <span class="required_mark">*</span>
-                                                </label>
-                                                <input class="primary_input_field" type="text" name="title"
-                                                    value="">
-                                                <span class="focus-border"></span>
-                                            </div>
+                                        <div class="col-xl-12">
+                                            <h5>Từ vựng <span class="word-number">1</span></h5>
                                         </div>
-                                    </div>
-                                    <div id="list-word">
-                                        <div class="card card-word p-3 mb-3">
-                                            <div class="row">
-                                                <div class="col-xl-12">
-                                                    <h5>Từ vựng <span class="word-number">1</span></h5>
+                                        <div class="col-xl-6">
+                                            <div class=" mt-25">
+                                                <div class="input-effect">
+                                                    <label> Từ vựng <span class="required_mark">*</span>
+                                                    </label>
+                                                    <input class="primary_input_field" type="text"
+                                                        name="learn_word[0][word]" value="">
+                                                    <span class="focus-border"></span>
+
                                                 </div>
-                                                <div class="col-xl-6">
-                                                    <div class=" mt-25">
-                                                        <div class="input-effect">
-                                                            <label> Từ vựng <span class="required_mark">*</span>
-                                                            </label>
-                                                            <input class="primary_input_field" type="text"
-                                                                name="learn_word[0][word]" value="">
-                                                            <span class="focus-border"></span>
+                                            </div>
+                                            <div class=" mt-25">
+                                                <div class="input-effect">
+                                                    <label> Loại từ vựng <span class="required_mark">*</span>
+                                                    </label>
+                                                    <input class="primary_input_field name" type="text"
+                                                        name="learn_word[0][type]" value="">
+                                                    <span class="focus-border"></span>
 
-                                                        </div>
-                                                    </div>
-                                                    <div class=" mt-25">
-                                                        <div class="input-effect">
-                                                            <label> Loại từ vựng <span class="required_mark">*</span>
-                                                            </label>
-                                                            <input class="primary_input_field name" type="text"
-                                                                name="learn_word[0][type]" value="">
-                                                            <span class="focus-border"></span>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class=" mt-25">
-                                                        <div class="input-effect">
-                                                            <label> Phiên âm <span class="required_mark">*</span>
-                                                            </label>
-                                                            <input class="primary_input_field name" type="text"
-                                                                name="learn_word[0][read]" value="">
-                                                            <span class="focus-border"></span>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class=" mt-25">
-                                                        <div class="input-effect">
-                                                            <label> Nghĩa tiêng Việt <span class="required_mark">*</span>
-                                                            </label>
-                                                            <input class="primary_input_field name" type="text"
-                                                                name="learn_word[0][trans]" value="">
-                                                            <span class="focus-border"></span>
-                                                        </div>
-                                                    </div>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <div class="input-effect  mt-25">
-                                                        <label> <span class="cnt-quest"> Giải thích</span><span
-                                                                class="required_mark">*</span></label>
-                                                        <textarea class="textArea lms_summernote" cols="30" rows="10" name="learn_word[0][note]"></textarea>
-                                                        <span class="focus-border textarea"></span>
-                                                    </div>
+                                            </div>
+                                            <div class=" mt-25">
+                                                <div class="input-effect">
+                                                    <label> Phiên âm <span class="required_mark">*</span>
+                                                    </label>
+                                                    <input class="primary_input_field name" type="text"
+                                                        name="learn_word[0][read]" value="">
+                                                    <span class="focus-border"></span>
+
+                                                </div>
+                                            </div>
+                                            <div class=" mt-25">
+                                                <div class="input-effect">
+                                                    <label> Nghĩa tiêng Việt <span class="required_mark">*</span>
+                                                    </label>
+                                                    <input class="primary_input_field name" type="text"
+                                                        name="learn_word[0][trans]" value="">
+                                                    <span class="focus-border"></span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row mt-40">
-                                        <div class="col-lg-12 text-center">
-                                            <button type="button" class="primary-btn fix-gr-bg" id="add-new-word">
-                                                <i class="ti-add"></i>
-                                                {{ __('Thêm từ mới') }}
-                                            </button>
-                                            <button class="primary-btn fix-gr-bg questionSubmitBtn" data-toggle="tooltip"
-                                                type="submit">
-                                                <i class="ti-check"></i>
-                                                @if (isset($bank))
-                                                    {{ __('common.Update') }}
-                                                @else
-                                                    {{ __('common.Save') }}
-                                                @endif
-                                                {{ __('quiz.Question') }}
-                                            </button>
+                                        <div class="col-lg-6">
+                                            <div class="input-effect  mt-25">
+                                                <label> <span class="cnt-quest"> Giải thích</span><span
+                                                        class="required_mark">*</span></label>
+                                                <textarea class="textArea lms_summernote" cols="30" rows="10" name="learn_word[0][note]"></textarea>
+                                                <span class="focus-border textarea"></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {{ Form::close() }}
+                            <div class="row mt-40">
+                                <div class="col-lg-12 text-center">
+                                    <button class="primary-btn fix-gr-bg questionSubmitBtn" data-toggle="tooltip"
+                                        type="submit">
+                                        <i class="ti-check"></i>
+                                        Lưu từ vựng
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {{ Form::close() }}
+                        <div class="QA_section check_box_table mt-5">
+                            <div class="QA_table word_table">
+                                <div class="">
+                                    <table id="lms_table" class="table Crm_table_active3 quiz-bank-checkbox">
+                                        <thead>
+
+                                            <tr>
+                                                <th>
+                                                    <div class="d-flex items-center">
+
+                                                        <label class=" primary_checkbox  " for="questionSelectAll">
+                                                            <input type="checkbox" id="questionSelectAll"
+                                                                class="common-checkbox selectAllQuizQuestion">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+
+                                                        <a href="#" id="deleteAllBtn"
+                                                            style="display: none;    margin-top: -5px;"
+                                                            class="primary-btn small fix-gr-bg ml-2">
+                                                            <span class="ti-trash"></span>
+                                                        </a>
+                                                    </div>
+                                                </th>
+                                                <th>Từ vựng</th>
+                                                <th>Loại từ vựng</th>
+                                                <th>Phiên âm</th>
+                                                <th>Nghĩa tiêng Việt</th>
+                                                <th>{{ __('common.Action') }}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
 
     <div class="modal fade admin-query" id="deleteBank">
         <div class="modal-dialog modal-dialog-centered">
@@ -200,6 +220,8 @@
 @endsection
 @push('scripts')
     <script>
+        let table = $('#lms_table').DataTable();
+
         $("body").on('change', '.fileUpload1', function() {
             let placeholder = $(this).closest(".primary_file_uploader").find(".filePlaceholder");
             let fileInput = event.srcElement;

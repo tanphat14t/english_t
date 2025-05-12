@@ -7,7 +7,7 @@ $(document).ready(function () {
   dropdown();
   dropdownCheckbox();
   checkAnswer();
-  countdown();
+  // countdown();
 });
 function collapsedHotline() {
   $(".social-item.has-expand").each(function () {
@@ -75,28 +75,19 @@ function openMenu() {
 }
 
 function openPopupLogin() {
-  const $icAction = $(".ic-action");
-  const $modalLoginEl = $(".modal-login");
-  const $modalRegisterEl = $(".modal-register");
-  const $btnLogin = $("header .btn-login");
-  const $btnRegister = $("header .btn-register");
-
-  const modal = new bootstrap.Modal($modalLoginEl[0]);
-  const modalRegister = new bootstrap.Modal($modalRegisterEl[0]);
-
-  $icAction.on("click", function (e) {
+  $(".ic-action").on("click", function (e) {
     e.preventDefault();
-    modal.show();
+    $(".modal-login").modal("show");
   });
 
-  $btnLogin.on("click", function (e) {
+  $("header .btn-login").on("click", function (e) {
     e.preventDefault();
-    modal.show();
+    $(".modal-login").modal("show");
   });
 
-  $btnRegister.on("click", function (e) {
+  $("header .btn-register").on("click", function (e) {
     e.preventDefault();
-    modalRegister.show();
+    $(".modal-register").modal("show");
   });
 }
 

@@ -48,6 +48,7 @@ use Modules\UpcomingCourse\Entities\UpcomingCourseBooking;
 use Modules\UpcomingCourse\Entities\UpcomingCourseBookingPayment;
 use Modules\VirtualClass\Entities\ClassComplete;
 use Modules\VirtualClass\Entities\VirtualClass;
+use Modules\Blog\Entities\Blog;
 use PDF;
 
 class WebsiteController extends Controller
@@ -1868,8 +1869,9 @@ class WebsiteController extends Controller
             }
 
             if (hasDynamicPage() || currentTheme() == 'edume') {
+                $blog = Blog::limit(3)->get();
                 $details = dynamicContentAppend($row->details);
-                return view('aorapagebuilder::pages.show', compact('row', 'details'));
+                return view('aorapagebuilder::pages.show', compact('row', 'details', 'blog'));
             } else {
                 return view(theme('pages.page'), compact('page'));
             }

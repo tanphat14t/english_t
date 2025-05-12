@@ -64,13 +64,12 @@ class PageBuilderController extends Controller
             Toastr::error($e->getMessage(), 'Error!!');
             return response()->json(['error' => $e->getMessage()], 503);
         }
-
-
     }
 
     public function show($id)
     {
         try {
+            dd(1);
             $data['row'] = $this->pageBuilderRepo->find($id);
             return view('aorapagebuilder::pages.show', $data);
         } catch (Exception $e) {

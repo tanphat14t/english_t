@@ -28,7 +28,7 @@
                     </div>
                     <div class="nav-logo me-2">
                         <a href="/">
-                            <img src="{{ asset('/public/images/logo.svg') }}" alt="">
+                            <img src="{{ asset('/public/images/ms_ling_logo.png') }}" alt="">
                         </a>
                     </div>
                     <div class="search-box d-none d-lg-block">

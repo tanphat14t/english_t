@@ -46,335 +46,137 @@
                 top: 70px;
             }
         }
-
     </style>
 
     <!-- HEADER::START -->
 
-    <header>
-        <div id="sticky-header" class="header_area ">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="header__wrapper">
-                            <!-- header__left__start  -->
-                            {{-- <div class="header__left d-flex align-items-center gap-20 ">
-                                <div class="">
-                                    <a class="logo_img" href="{{url('/')}}">
-                                        <img class="p-2" src="{{getLogoImage(Settings('logo') )}}" width="150"
-                                             alt="{{ Settings('site_name')  }}">
-                                    </a>
-                                </div>
-                                <div class="mr-3 translator-switch">
-
-                                    @if(Settings('frontend_language_translation') == 1)
-                                        @php
-                                            if (auth()->check()){
-                                                $currentLang =auth()->user()->language_code;
-                                            }else{
-                                                $currentLang =app()->getLocale();
-                                            }
-                                        @endphp
-                                        <select name="code" id="language_code" class="nice_Select"
-                                                onchange="location = this.value;">
-                                            @foreach (getLanguageList() as $key => $language)
-                                                <option value="{{route('changeLanguage',$language->code)}}"
-                                                        @if ($currentLang == $language->code) selected @endif>{{$language->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-
-                                    @endif
-
-                                </div>
-
-                                <div class="category_search d-flex category_box_iner">
-                                    @if(Settings('category_show'))
-                                        <div class="input-group-prepend2">
-                                            <a href="#" class="categories_menu">
-                                                <i class="fas fa-th"></i>
-                                                <span>{{__('courses.Category')}}</span>
-                                            </a>
-                                            <div class="menu_dropdown">
-                                                <ul>
-                                                    @if(isset($categories))
-                                                        @foreach($categories as $category)
-
-                                                            @include(theme('partials._category'),['category'=>$category,'level'=>1])
-
-                                                        @endforeach
-                                                    @endif
-                                                </ul>
-
-                                            </div>
-                                        </div>
-                                    @endif
-                                    @if(Settings('hide_menu_search_box')!=1)
-                                        <form action="{{route('search')}}">
-                                            <div class="input-group theme_search_field">
-                                                <div class="input-group-prepend">
-                                                    <button class="btn" type="button" id="button-addon1"><i
-                                                            class="ti-search"></i>
-                                                    </button>
-                                                </div>
-
-                                                <input type="text" class="form-control" name="query"
-                                                       placeholder="{{__('frontend.Search for course, skills and Videos')}}"
-                                                       onfocus="this.placeholder = ''"
-                                                       onblur="this.placeholder = '{{__('frontend.Search for course, skills and Videos')}}'">
-
-                                            </div>
-                                        </form>
-                                    @endif
-                                </div>
-                            </div> --}}
-                            <!-- header__left__start  -->
-
-                            <!-- main_menu_start  -->
-                            {{-- <div class="main_menu text-right d-none d-lg-block category_box_iner">
-                                <nav>
-                                    <div class="menu_dropdown">
-                                        <ul>
-                                            @if(isset($categories))
-                                                @foreach($categories as $category)
-                                                    <li class="mega_menu_dropdown active_menu_item">
-                                                        <a href="{{route('courses')}}?category={{$category->id}}">{{$category->name}}</a>
-                                                        @if(isset($category->activeSubcategories))
-                                                            @if(count($category->activeSubcategories)!=0)
-                                                                <ul>
-                                                                    <li>
-                                                                        <div class="menu_dropdown_iner d-flex">
-                                                                            <div class="single_menu_dropdown">
-                                                                                <h4>{{__('courses.Sub Category')}}</h4>
-                                                                                <ul>
-                                                                                    @if(isset($category->activeSubcategories))
-                                                                                        @foreach( $category->activeSubcategories as $subcategory)
-                                                                                            <li>
-                                                                                                <a href="{{route('courses')}}?category={{$category->id}}">{{$subcategory->name}}</a>
-                                                                                            </li>
-                                                                                        @endforeach
-                                                                                    @endif
-                                                                                </ul>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                            @endif
-                                                        @endif
-                                                    </li>
-                                                @endforeach
-                                            @endif
-                                        </ul>
-                                    </div>
-
-
-                                    <ul id="mobile-menu">
-
-
-                                        @if(isset($menus))
-                                            @foreach($menus->where('parent_id',null) as $menu)
-                                                @php
-                                                    if($menu->title=='Forum' && !isModuleActive('Forum')){
-                                                        continue;
-                                                    }
-                                                    if($menu->link == '/upcoming-courses'  && !isModuleActive('UpcomingCourse')){
-                                                       continue;
-                                                    }
-
-                                                    if ($menu->link=='/saas-signup') {
-                                                        if (Auth::check()) {
-                                                           continue;
-                                                        }elseif (SaasDomain() !='main')
-                                                        {
-                                                            continue;
-                                                        }
-                                                    }
-                                                @endphp
-                                                <li class="@if($menu->mega_menu==1) position-static @else @if($menu->show==1) right_control_submenu @endif @endif">
-                                                    <a @if($menu->is_newtab==1) target="_blank"
-                                                       @endif href="{{getMenuLink($menu)}}">{{$menu->title}}</a>
-                                                    @if(isset($menu->childs))
-                                                        @if(count($menu->childs)!=0)
-                                                            @if(isset($menu->childs))
-                                                                @if($menu->mega_menu==1)
-                                                                    <ul class="mega_menu submenu ">
-                                                                        <li class="container mx-auto">
-                                                                            <div class="row">
-                                                                                @foreach($menu->childs as $sub)
-                                                                                    <div
-                                                                                        class="col-lg-{{$menu->mega_menu_column}}">
-                                                                                        <h4>
-                                                                                            {{$sub->title}}
-                                                                                        </h4>
-                                                                                        @if(isset($sub->childs))
-                                                                                            @if(count($sub->childs)!=0)
-                                                                                                <ul class="mega_menu_list">
-                                                                                                    @foreach( $sub->childs as $s)
-                                                                                                        <li class="@if($sub->show==1)  @endif">
-                                                                                                            <a @if($s->is_newtab==1) target="_blank"
-                                                                                                               @endif  href="{{getMenuLink($s)}}">{{$s->title}}</a>
-                                                                                                        </li>
-                                                                                                    @endforeach
-                                                                                                </ul>
-                                                                                            @endif
-                                                                                        @endif
-
-                                                                                    </div>
-                                                                                @endforeach
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-                                                                @else
-                                                                    <ul class="submenu list">
-                                                                        @foreach($menu->childs as $sub)
-                                                                            <li class=""><a
-                                                                                    @if($sub->is_newtab==1) target="_blank"
-                                                                                    @endif href="{{getMenuLink($sub)}}">{{$sub->title}}
-                                                                                    @if(isset($sub->childs) && count($sub->childs)!=0)
-                                                                                        <i class="ti-angle-right"></i>
-                                                                                    @endif
-                                                                                </a>
-                                                                                @if(isset($sub->childs))
-                                                                                    @if(count($sub->childs)!=0)
-                                                                                        <ul class="@if($sub->show==1)  leftcontrol_submenu @endif">
-                                                                                            @foreach( $sub->childs as $s)
-                                                                                                <li class="@if($sub->show==1)  @endif">
-                                                                                                    <a @if($s->is_newtab==1) target="_blank"
-                                                                                                       @endif  href="{{getMenuLink($s)}}">{{$s->title}}</a>
-                                                                                                </li>
-                                                                                            @endforeach
-                                                                                        </ul>
-                                                                                    @endif
-                                                                                @endif
-                                                                            </li>
-                                                                        @endforeach
-                                                                    </ul>
-                                                                @endif
-                                                            @endif
-                                                        @endif
-                                                    @endif
-                                                </li>
-
-                                            @endforeach
-                                        @else
-
-                                        @endif
-                                        <li><a href="#"></a></li>
-
-
-                                    </ul>
-
-
-                                </nav>
-                            </div> --}}
-                            <!-- main_menu_start  -->
-
-
-                            <div class="mr-3 translator-switch">
-
-                                @if(Settings('hide_multicurrency') == 1)
-
-                                    @php
-                                        if (auth()->check()){
-                                            $currency_id =auth()->user()->currency_id;
-                                        }elseif(session('currency_id')){
-                                           $currency_id = session('currency_id');
-                                        }else{
-                                            $currency_id =Settings('currency_id');
-                                        }
-                                    @endphp
-                                    <select name="frontend_currency_id" id="language_code" class="nice_Select"
-                                            onchange="location = this.value;">
-                                        @foreach (getCurrencyList() as $key => $currency)
-                                            <option value="{{route('changeCurrency',$currency->id)}}"
-                                                    @if ($currency_id == $currency->id) selected @endif>{{$currency->code }}
-                                                ({{$currency->symbol}})
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                @endif
-
-                            </div>
-                            <!-- header__right_start  -->
-                            @auth()
-                                <div class="header__right login_user">
-                                    <div class="profile_info collaps_part">
-                                        <div class="profile_img collaps_icon     d-flex align-items-center">
-                                            <div class="studentProfileThumb"
-                                                 style="background-image: url('{{getProfileImage(Auth::user()->image,Auth::user()->name)}}')"></div>
-                                        </div>
-                                        <div class="profile_info_iner collaps_part_content">
-                                            @if(Auth::user()->role_id==3)
-                                                <a href="{{route('studentDashboard')}}">{{__('dashboard.Dashboard')}}</a>
-                                                <a href="{{auth()->user()->username?route('profileUniqueUrl',auth()->user()->username):''}}">{{__('frontendmanage.My Profile')}}</a>
-                                                <a href="{{route('users.settings')}}">{{__('frontend.Account Settings')}}</a>
-
-                                                @if(isModuleActive('Affiliate') && auth()->user()->affiliate_request!=1)
-                                                    <a href="{{routeIsExist('affiliate.users.request')?route('affiliate.users.request'):''}}">{{__('frontend.Join Affiliate Program')}}</a>
-                                                @endif
-                                            @else
-                                                <a href="{{route('dashboard')}}">{{__('dashboard.Dashboard')}}</a>
-                                                <a href="{{auth()->user()->username?route('profileUniqueUrl',auth()->user()->username):''}}">{{__('frontendmanage.My Profile')}}</a>
-
-                                                <a href="{{route('users.settings')}}">{{__('frontend.Account Settings')}}</a>
-                                            @endif
-                                            @if(isModuleActive('UserType'))
-                                                @foreach(auth()->user()->userRoles as $role)
-                                                    @php
-                                                        if ($role->id==auth()->user()->role_id){
-                                                            continue;
-                                                        }
-                                                    @endphp
-                                                    <a href="{{route('usertype.changePanel',$role->id)}}">
-                                                        {{__('common.Switch to')}} {{$role->name}}
-                                                    </a>
-                                                @endforeach
-                                            @endif
-                                            <a href="{{route('logout')}}">{{__('frontend.Log Out')}}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endauth
-                            @guest()
-                                <div class="header__right">
-                                    <div class="contact_wrap d-flex align-items-center">
-                                        <div class="contact_btn">
-                                            <a href="{{url('login')}}"
-                                               class="theme_btn small_btn2">{{__('frontend.Sign In')}} </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endguest
-                            <!-- header__right_end  -->
-                        </div>
+    <header class="primary-header">
+        <div class="navigation-bar cs-container">
+            <nav class="navbar">
+                <div class="nav-left d-flex align-items-center">
+                    <div class="ic-hamburger d-flex d-lg-none">
+                        <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                        </svg>
                     </div>
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
+                    <div class="nav-logo me-2">
+                        <a href="/">
+                            <img src="{{ asset('/public/images/ms_ling_logo.png') }}" alt="">
+                        </a>
+                    </div>
+                    <div class="search-box d-none d-lg-block">
+                        <form action="" class="search">
+                            <button class="btn-search">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <input placeholder="Tìm kiếm..." type="text">
+                        </form>
                     </div>
                 </div>
-            </div>
+                <!-- <div class="nav-left d-flex d-lg-none align-items-center">
+                    <div class="ic-hamburger">
+                        <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                        </svg>
+                    </div>
+                    <div class="nav-logo">
+                        <a href="/">
+                            <img src="public/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                </div> -->
+                <div class="categories">
+                    <a class="current" href="/">
+                        <span><img src="{{ asset('/public/images/ic-home.svg') }}" alt=""></span>
+                        Trang chủ
+                    </a>
+                    <a href="/">
+                        <span><img src="{{ asset('/public/images/ic-news.svg') }}" alt=""></span>
+                        Blog
+                    </a>
+                </div>
+                <div class="action">
+                    <div class="ic-action">
+                        <img src="{{ asset('/public/images/ic-action.svg') }}" alt="">
+                    </div>
+                    <a class="btn btn-login" href="/">
+                        Đăng nhập
+                    </a>
+                    <a class="btn btn-register" href="/">
+                        Đăng ký
+                    </a>
+                </div>
+
+                <div class="action is-loged-in d-none">
+                    <div class="action-button">
+                        <img src="{{ asset('/public/images/default-avatar.webp') }}" alt="">
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <img src="{{ asset('/public/images/default-avatar.webp') }}" alt="">
+                            </div>
+                            <div class="user-details">
+                                <p class="user-name">Nguyễn Linh</p>
+                                <p class="user-email">nguyenhphp@gmail.com</p>
+                            </div>
+                        </div>
+                        <a href="/">
+                            <div class="user-menu-item">
+                                <img src="{{ asset('/public/images/user.svg') }}" alt="">
+                                Trang cá nhân
+                            </div>
+                        </a>
+                        <a href="/">
+                            <div class="user-menu-item">
+                                <img src="{{ asset('/public/images/my-course1.svg') }}" alt="">
+                                Khóa học của tôi
+                            </div>
+                        </a>
+                        <a href="/">
+                            <div class="user-menu-item">
+                                <img src="{{ asset('/public/images/cart-menu.svg') }}" alt="">Lịch sử đơn hàng
+                            </div>
+                        </a>
+                        <a href="/">
+                            <div class="user-menu-item">
+                                <img src="{{ asset('/public/images/reserve.svg') }}" alt="">Bảo lưu
+                            </div>
+                        </a>
+                        <a href="/">
+                            <div class="user-menu-item">
+                                <img src="{{ asset('/public/images/sign-out.svg') }}" alt="">Đăng xuất
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
-
-    @if(Settings('category_show'))
+    
+    @if (Settings('category_show'))
         <div class="side_cate">
             <div class="side_cate_close"><i class="ti ti-close"></i></div>
             <div class="side_cate_wrap">
                 <ul class="side_cate_wrap_menu">
 
-                    @if(isset($categories))
-                        @foreach($categories as $category)
-
-                            @include(theme('partials._mobile_category'),['category'=>$category,'level'=>1])
-
+                    @if (isset($categories))
+                        @foreach ($categories as $category)
+                            @include(theme('partials._mobile_category'), [
+                                'category' => $category,
+                                'level' => 1,
+                            ])
                         @endforeach
                     @endif
                 </ul>
             </div>
         </div>
     @endif
-    {{-- @if(Settings('show_cart')==1)
+    {{-- @if (Settings('show_cart') == 1)
         <a href="#" class="float notification_wrapper cart_icon">
             <div class="notify_icon cart_store" style="padding-top: 7px">
                 <img style="max-width: 30px;" src="{{asset('/public/frontend/infixlmstheme/')}}/img/svg/cart_white.svg"

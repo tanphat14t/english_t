@@ -98,7 +98,7 @@ class FlashcardController extends Controller
 
             DB::commit();
             Toastr::success(trans('common.Operation successful'), trans('common.Success'));
-            return redirect()->back();
+            return redirect()->route('flashcard.edit', $flashId);
         } catch (\Exception $e) {
             GettingError($e->getMessage(), url()->current(), request()->ip(), request()->userAgent());
         }
@@ -119,10 +119,37 @@ class FlashcardController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
+    {
+        $wordId = $request->word ? $request->word : 0;
+        $word = FlashcardWord::find($wordId);
+        $flashcard = Flashcard::with('flashcardAssign')->find($id);
+        return view('flashcard::edit', compact('flashcard', 'word'));
+    }
+
+    public function getFlashcardAllWord($id)
     {
         $flashcard = Flashcard::with('flashcardAssign')->find($id);
-        return view('flashcard::edit', compact('flashcard'));
+        return Datatables::of($flashcard->flashcardAssign)
+            ->addIndexColumn()
+            ->addColumn('delete_btn', function ($query) {
+                return view('flashcard::partials._delete_btn', compact('query'));
+            })->addColumn('DT_RowIndex', function ($query) {
+                return $query->id;
+            })->addColumn('word', function ($query) {
+                return $query->word;
+            })
+            ->addColumn('type', function ($query) {
+                return $query->word_type;
+            })
+            ->addColumn('word_read', function ($query) {
+                return $query->word_read;
+            })
+            ->addColumn('word_trans', function ($query) {
+                return $query->word_trans;
+            })->addColumn('action', function ($query) {
+                return view('flashcard::partials._edit_action', compact('query'));
+            })->rawColumns(['delete_btn', 'action', 'image', 'question'])->make(true);
     }
 
     /**
@@ -137,7 +164,6 @@ class FlashcardController extends Controller
             'title' => 'required|max:255',
         ];
         // $this->validate($request, $rules, validationMessage($rules));
-
         try {
             DB::beginTransaction();
 
@@ -147,33 +173,25 @@ class FlashcardController extends Controller
             $flashId = $flashcard->id;
 
             if ($flashId) {
-                $flashword_arr = isset($request->learn_word) ? $request->learn_word : [];
-                $new_id_word = array_column($flashword_arr, 'id');
-                
-                $old_id_word = $flashcard->flashcardAssign->pluck('id')->toArray();
-                $delete_id = array_diff($old_id_word, $new_id_word);
-                FlashcardWord::whereIn('id', $delete_id)->delete();
-
-                if ($flashword_arr) {
-                    foreach ($flashword_arr as $item) {
-                        if (isset($item['id'])) {
-                            $flashword = FlashcardWord::find($item['id']);
-                            $flashword->word = $item['word'];
-                            $flashword->word_type = $item['type'];
-                            $flashword->word_read = $item['read'];
-                            $flashword->word_trans = $item['trans'];
-                            $flashword->word_note = $item['note'];
-                            $flashword->save();
-                        }else{
-                            $flashword = new FlashcardWord();
-                            $flashword->flashcard_id = $flashId;
-                            $flashword->word = $item['word'];
-                            $flashword->word_type = $item['type'];
-                            $flashword->word_read = $item['read'];
-                            $flashword->word_trans = $item['trans'];
-                            $flashword->word_note = $item['note'];
-                            $flashword->save();
-                        }
+                if ($request->word_id) {
+                    $flashword = FlashcardWord::where('id', $request->word_id)->update([
+                        "flashcard_id" => $flashId,
+                        "word" => $request->word,
+                        "word_type" => $request->type,
+                        "word_read" => $request->word_read,
+                        "word_trans" => $request->word_trans,
+                        "word_note" => $request->word_note
+                    ]);
+                }else{
+                    if($request->word && $request->type && $request->word_read && $request->word_trans && $request->word_note){
+                        $flashword = FlashcardWord::create([
+                            "flashcard_id" => $flashId,
+                            "word" => $request->word,
+                            "word_type" => $request->type,
+                            "word_read" => $request->word_read,
+                            "word_trans" => $request->word_trans,
+                            "word_note" => $request->word_note
+                        ]);
                     }
                 }
             }

@@ -59,6 +59,8 @@
     <link rel="stylesheet" href="{{ asset('public/frontend/infixlmstheme') }}/css/nice-select.css{{assetVersion()}}">
     <link rel="stylesheet" href="{{ asset('public/frontend/infixlmstheme') }}/css/notification.css{{assetVersion()}}">
     <link rel="stylesheet" href="{{ asset('public/frontend/infixlmstheme/css/mega_menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/infixlmstheme/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/infixlmstheme/css/responsive.css') }}">
 
     <link href="{{asset('public/backend/css/summernote-bs4.min.css')}}{{assetVersion()}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('public/css/preloader.css')}}{{assetVersion()}}"/>
@@ -181,5 +183,5 @@
 </head>
 
 <body>
-
+@include('frontend.infixlmstheme.partials._sidebar-menu')
 @include('secret_login')

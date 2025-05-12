@@ -12,11 +12,12 @@
 */
 
 Route::prefix('flashcard')->group(function() {
-    Route::get('/', 'FlashcardController@index')->name('flashcard.index')->middleware('RoutePermissionCheck:flashcard');;
-    Route::get('/get-all', 'FlashcardController@getFlashcardAll')->name('getFlashcardAll')->middleware('RoutePermissionCheck:flashcard');;
+    Route::get('/', 'FlashcardController@index')->name('flashcard.index')->middleware('RoutePermissionCheck:flashcard');
+    Route::get('/get-all', 'FlashcardController@getFlashcardAll')->name('getFlashcardAll')->middleware('RoutePermissionCheck:flashcard');
     Route::get('/add', 'FlashcardController@create')->name('flashcard.create')->middleware('RoutePermissionCheck:flashcard.create');
     Route::post('/store', 'FlashcardController@store')->name('flashcard.store')->middleware('RoutePermissionCheck:flashcard.store');
     Route::get('/edit/{id}', 'FlashcardController@edit')->name('flashcard.edit')->middleware('RoutePermissionCheck:flashcard.edit');
+    Route::get('/get-all/word/{id}', 'FlashcardController@getFlashcardAllWord')->name('getFlashcardAllWord')->middleware('RoutePermissionCheck:flashcard.edit');;
     Route::put('/update/{id}', 'FlashcardController@update')->name('flashcard-update')->middleware('RoutePermissionCheck:flashcard.edit');
     Route::delete('/destroy/{id}', 'FlashcardController@destroy')->name('flashcard-delete')->middleware('RoutePermissionCheck:flashcard.delete');
 });
